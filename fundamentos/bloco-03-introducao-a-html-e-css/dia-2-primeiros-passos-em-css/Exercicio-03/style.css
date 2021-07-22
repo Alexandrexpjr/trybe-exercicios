@@ -1,0 +1,32 @@
+body {
+    font-size: 16px;
+    text-align: center;
+    background-color: lightgreen;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+p {
+    font-weight: 600;
+    font-size: 3em;
+    font-family: cursive;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#red {
+    background-color: red;
+}
+
+#brown {
+    background-color: brown;
+}
+
+li {
+    line-height: 2em;
+    text-decoration: underline;
+}
