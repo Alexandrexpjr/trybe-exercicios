@@ -1,0 +1,61 @@
+ol {
+    background-color: yellow;
+
+}
+
+li.impar {
+    text-transform: uppercase;
+}
+
+li.par {
+    color: green;
+}
+
+.title {
+    color: red;
+}
+
+.title.italic {
+    font-size: 40px;
+    border: 1px solid black;
+}
+
+li em {
+    font-weight: bold;
+}
+
+li {
+    font-size: 20px;
+}
+
+.blue {
+    color: blue;
+}
+
+.java {
+    background-color: pink;
+}
+
+.ally li a:hover{
+    font-weight: bold;
+}
+
+.ally li:nth-child(1):hover {
+    background-color: orange;
+}
+
+.ally li:nth-child(2):hover {
+    background-color: green;
+}
+
+.ally li:nth-child(3):hover {
+    background-color: black
+}
+
+.ally li:nth-child(4):hover {
+    background-color: blue;
+}
+
+.ally li:nth-child(5):hover {
+    background-color: rgb(28, 116, 75);
+}
