@@ -53,7 +53,7 @@ li {
 }
 
 .ally li:nth-child(4):hover {
-    background-color: blue;
+    background-color: rgb(235, 235, 109);
 }
 
 .ally li:nth-child(5):hover {
