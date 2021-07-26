@@ -1,13 +1,19 @@
+body {
+    text-align: center;
+}
+
 h1 {
     text-align: center;
   }
 
+ 
   .first {
     background-color: rgb(235, 200, 84);
     font-size: 20px;
     height: 50px;
     text-align: center;
     width: 200px;
+    margin: 0 auto;
   }
 
   .second {
@@ -16,6 +22,7 @@ h1 {
     height: 50px;
     text-align: center;
     width: 300px;
+    display: inline-block;
   }
 
   .third {
@@ -24,4 +31,9 @@ h1 {
     height: 50px;
     text-align: center;
     width: 300px;
+    display: inline-block;
+  }
+
+  ul:nth-child(n+2) li{
+      display: inline;
   }
