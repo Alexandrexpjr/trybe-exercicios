@@ -1,11 +1,39 @@
 body {
     text-align: center;
     padding: 0;
+    margin: 0 100px;
+}
+
+header {
+    background-color: greenyellow;
+}
+
+main {
+    background-color: aqua;
     margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: rgb(230, 123, 203);
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 0 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
 }
 
 table {
     display: inline-block;
+    background-color: white;
 }
 
 table, th, td {
@@ -13,3 +41,36 @@ table, th, td {
     border-collapse: collapse;
 }
 
+th, td {
+    padding: 2px 20px;
+}
+
+section {
+    display: inline-block;
+    width: 30%;
+    margin: 20px;
+    padding: 50px;
+    background-color: tomato;
+}
+
+img {
+    width: 300px;
+}
+
+aside {
+    display: inline-block;
+    width: 30%;
+}
+
+article {
+    width: 70%;
+}
+
+section:last-child ul li{
+    display: inline-block;
+    padding: 20px;
+}
+
+section:last-child {
+    width: 900px;
+}
