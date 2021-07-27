@@ -1,21 +1,34 @@
 body {
     text-align: center;
     padding: 0;
-    margin: 0 100px;
+    background-color: lightgray;
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: white;
 }
 
 header {
-    background-color: greenyellow;
+    display: block;
+    padding: 1px 0;
 }
 
 main {
-    background-color: aqua;
+    display: block;
     margin: 0;
     padding: 0;
 }
 
 nav {
-    background-color: rgb(230, 123, 203);
+    background-color: rgb(36, 205, 211);
     margin: 0;
     padding: 0;
 }
@@ -27,7 +40,7 @@ nav ul li{
     text-align: center;
 }
 
-nav ul {
+ul {
     padding: 0;
 }
 
@@ -46,24 +59,44 @@ th, td {
 }
 
 section {
-    display: inline-block;
-    width: 30%;
-    margin: 20px;
-    padding: 50px;
-    background-color: tomato;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 0;
 }
 
-img {
+p {
+    text-align: left;
+    line-height: 150%;
+}
+
+section img {
     width: 300px;
 }
 
-aside {
+.wide {
+    width: 500px;
+}
+
+aside img {
     display: inline-block;
-    width: 30%;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+aside {
+    display: block;
+    float: left;
+    width: 35%;
+    text-align: center;
+    padding:20px;
 }
 
 article {
-    width: 70%;
+    width: 65%;
+    display: block;
+    float: left;
+    padding:20px;
 }
 
 section:last-child ul li{
@@ -71,6 +104,23 @@ section:last-child ul li{
     padding: 20px;
 }
 
-section:last-child {
-    width: 900px;
+footer {
+    display: block;
+    clear: both;
+    font-size: 12px;
 }
+
+h2 {
+    margin-top: 0;
+}
+
+a {
+    color: orangered;
+}
+
+nav a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
