@@ -100,3 +100,62 @@ switch (pieceLower) {
         console.log("error: invalid piece")        
 }
 
+// 7) Conversão de nota;
+
+let porcentagem = 30;
+
+console.log("Resultados do Sétimo Exercício:");
+
+if (porcentagem >= 90 && porcentagem < 100) {
+    console.log("A");
+} else if (porcentagem >= 80 && porcentagem < 90) {
+    console.log("B");
+} else if (porcentagem >= 70 && porcentagem < 80){
+    console.log("C");
+} else if (porcentagem >= 60 && porcentagem < 70){
+    console.log("D");   
+} else if (porcentagem >= 50 && porcentagem < 60){
+    console.log("E");
+} else if (porcentagem >= 0 && porcentagem < 50){
+    console.log("F");
+} else {
+    console.log("nota inválida");
+}
+    
+// 8) 3 variáveis, uma par;
+
+let firstEntry = 1;
+let secondEntry = 1;
+let thirdEntry = -4;
+
+let firstEntryModule = firstEntry % 2;
+let secondEntryModule = secondEntry % 2;
+let thirdEntryModule = thirdEntry % 2;
+
+console.log("Resultados do Oitavo Exercício:");
+
+if (firstEntryModule == 0 || secondEntryModule == 0 || thirdEntryModule == 0) {
+    console.log("true");
+} else {
+    console.log("false")
+}
+
+// 9) 3 variáveis, uma ímpar; 
+
+let entry1 = -201;
+let entry2 = 100;
+let entry3 = -2;
+
+let entry1Module = entry1 % 2;
+let entry2Module = entry2 % 2;
+let entry3Module = entry3 % 2;
+
+console.log("Resultados do Nono Exercício:");
+
+if (entry1Module !== 0 || entry2Module !== 0 || entry3Module !== 0) {
+    console.log("true");
+} else {
+    console.log("false")
+}
+
+// 10) Lucro ao vender mil produtos;
