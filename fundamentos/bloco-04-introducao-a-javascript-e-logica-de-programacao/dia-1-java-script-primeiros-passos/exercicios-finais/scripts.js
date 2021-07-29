@@ -1,7 +1,7 @@
 // 1) Aritimética básica;
 
-let elementA = 20;
-let elementB = 7;
+let elementA = 42;
+let elementB = 13;
 
 console.log("Resultados do Primeiro Exercício:");
 console.log(elementA + elementB);
@@ -12,8 +12,8 @@ console.log(elementA % elementB);
 
 // 2) Maior de dois números;
 
-let firstNumber = 12;
-let secondNumber = 11;
+let firstNumber = 42;
+let secondNumber = 13;
 
 console.log("Resultados do Segundo Exercício:");
 if (firstNumber > secondNumber) {
@@ -26,9 +26,9 @@ if (firstNumber > secondNumber) {
 
 // 3) Maior de três números;
 
-let numberOne = 12;
-let numberTwo = 10;
-let numberThree = 80;
+let numberOne = 42;
+let numberTwo = 13;
+let numberThree = 86;
 
 console.log("Resultados do Terceiro Exercício:");
 if (numberOne > numberTwo && numberOne > numberThree) {
@@ -43,7 +43,7 @@ if (numberOne > numberTwo && numberOne > numberThree) {
 
 // 4) Positivo, negativo ou nulo;
 
-let number = -1;
+let number = -30;
 
 console.log("Resultados do Quarto Exercício:");
 if (number > 0) {
@@ -56,9 +56,9 @@ if (number > 0) {
 
 // 5) Ângulos internos do triângulo;
 
-let angleA = 79;
+let angleA = 60;
 let angleB = 60;
-let angleC = 41;
+let angleC = 60;
 let sum = angleA + angleB + angleC;
 
 console.log("Resultados do Quinto Exercício:");
@@ -72,7 +72,7 @@ if (angleA <=0 || angleB <=0 || angleC <=0) {
 
 // 6) Peças de xadrez e seus movimentos;
 
-let piece = 'kniGHT';
+let piece = 'QuEEn';
 let pieceLower = piece.toLowerCase()
 
 console.log("Resultados do Sexto Exercício:");
@@ -91,7 +91,7 @@ switch (pieceLower) {
         console.log("Moves vertically or horizontally, through any number of unoccupied squares");
         break;
     case 'queen':
-        console.log("Moves either diagonally,vertically or horizontally, through any number of unoccupied squares.");
+        console.log("Moves either diagonally, vertically or horizontally, through any number of unoccupied squares.");
         break;
     case 'king':
         console.log("Moves one square for any direction, except in castling")
@@ -102,7 +102,7 @@ switch (pieceLower) {
 
 // 7) Conversão de nota;
 
-let porcentagem = 30;
+let porcentagem = 77;
 
 console.log("Resultados do Sétimo Exercício:");
 
@@ -124,9 +124,9 @@ if (porcentagem >= 90 && porcentagem < 100) {
     
 // 8) 3 variáveis, uma par;
 
-let firstEntry = 1;
-let secondEntry = 1;
-let thirdEntry = -4;
+let firstEntry = 22;
+let secondEntry = 23;
+let thirdEntry = -28;
 
 let firstEntryModule = firstEntry % 2;
 let secondEntryModule = secondEntry % 2;
@@ -142,9 +142,9 @@ if (firstEntryModule == 0 || secondEntryModule == 0 || thirdEntryModule == 0) {
 
 // 9) 3 variáveis, uma ímpar; 
 
-let entry1 = -201;
-let entry2 = 100;
-let entry3 = -2;
+let entry1 = 15;
+let entry2 = 150;
+let entry3 = 300;
 
 let entry1Module = entry1 % 2;
 let entry2Module = entry2 % 2;
@@ -159,3 +159,16 @@ if (entry1Module !== 0 || entry2Module !== 0 || entry3Module !== 0) {
 }
 
 // 10) Lucro ao vender mil produtos;
+
+let custo = 3000;
+let venda = 3822;
+let lucro = (venda - custo * 1.2) * 1000;
+
+console.log("Resultados do Décimo Exercício:");
+if(custo <0 || venda <0) {
+    console.log("Valor(es) inválido(s)");
+} else if (lucro >= 0) {
+    console.log("O lucro foi de " + lucro + " reais!");
+} else if (lucro < 0) {
+    console.log("Sua empresa não deu lucro :(");
+}
