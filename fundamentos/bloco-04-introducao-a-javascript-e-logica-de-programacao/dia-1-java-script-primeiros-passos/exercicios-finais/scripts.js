@@ -160,15 +160,45 @@ if (entry1Module !== 0 || entry2Module !== 0 || entry3Module !== 0) {
 
 // 10) Lucro ao vender mil produtos;
 
-let custo = 3000;
-let venda = 3822;
+let custo = 3000.00;
+let venda = 3822.00;
 let lucro = (venda - custo * 1.2) * 1000;
 
 console.log("Resultados do Décimo Exercício:");
 if(custo <0 || venda <0) {
     console.log("Valor(es) inválido(s)");
 } else if (lucro >= 0) {
-    console.log("O lucro foi de " + lucro + " reais!");
+    console.log("O lucro foi de R$" + lucro + " reais!");
 } else if (lucro < 0) {
     console.log("Sua empresa não deu lucro :(");
 }
+
+// 11) Cálculo do salário líquido;
+
+let salarioBruto = 10000.00;
+let salarioDeduzido = 0;
+let salarioLiquido = 0;
+
+if (salarioBruto <= 1556.94) {
+    salarioDeduzido = salarioBruto * 0.92 
+} else if (salarioBruto > 1556.94 && salarioBruto <= 2594.92) {
+    salarioDeduzido = salarioBruto * 0.91
+} else if (salarioBruto > 2594.92 && salarioBruto <= 5189.82) {
+    salarioDeduzido = salarioBruto * 0.89
+} else if (salarioBruto > 5189.82) {
+    salarioDeduzido = salarioBruto - 570.88 
+}
+
+if (salarioDeduzido <= 1903.98) {
+    salarioLiquido = salarioDeduzido
+} else if (salarioDeduzido >= 1903.99 && salarioDeduzido <= 2826.65) {
+    salarioLiquido = salarioDeduzido * 0.925 + 142.80 
+} else if (salarioDeduzido >= 2826.66 && salarioDeduzido <= 3751.05 ) {
+    salarioLiquido = salarioDeduzido * 0.85 + 358.80
+} else if (salarioDeduzido >= 3751.06 && salarioDeduzido <= 4664.68) {
+    salarioLiquido = salarioDeduzido * 0.775 + 636.13
+} else {
+    salarioLiquido = salarioDeduzido * 0.725 + 869.36
+}
+console.log("Resultados do Décimo Primeiro Exercício:");
+console.log("R$" + salarioLiquido)
