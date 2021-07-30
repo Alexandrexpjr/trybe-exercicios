@@ -1,12 +1,16 @@
 let senaNumbers =[];
 
-for(index = 0; index < 6; index += 1) {
-    senaNumbers.push(Math.ceil(Math.random() * 60 - 1))
+for(let index = 0; index < 6; index += 1) {
+    senaNumbers.push(Math.ceil(Math.random() * 60));
+    // for (let secondIndex = 0; secondIndex < senaNumbers.length; secondIndex += 1) {
+    //     if ()
+    // }
 }
 
-let firstTry = [1, 2, 3, 4, 5, 6];
-let secondTry = [7, 13, 19, 26, 33, 55];
-let thirdTry = [4, 11, 30, 33, 40, 59];
+
+let firstTry = [3, 7, 25, 35, 50, 52];
+let secondTry = [9, 17, 23, 32, 59, 60];
+let thirdTry = [7, 13, 30, 37, 40, 59];
 
 let tries = [firstTry, secondTry, thirdTry];
 
