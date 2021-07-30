@@ -4,7 +4,7 @@
 // 2) Criar um array do tamanho do número n;
 // 3) Fazer um loop que percorra todo o array;
 
-let n = 5;
+let n = 22;
 let square = "";
 console.log("Quadrado: ");
 
@@ -26,6 +26,7 @@ for (let line = 1; line <= n; line += 1) {
 }
 
 let reverseTriangle = "";
+console.log();
 console.log("Triângulo Reverso: ")
 
 for (let line = 1; line <= n; line += 1) {
@@ -37,3 +38,19 @@ for (let line = 1; line <= n; line += 1) {
     console.log(spaces + reverseTriangle);
 }                  // aqui utilizei a ideia do Braien Machado, conforme ele postou no slack
 
+console.log();
+console.log("Pirâmide: ")
+
+let piramid = "";
+
+for (let line = 1; line <= n; line += 1) {
+    piramid += "*";
+    let spaces = '';
+    for (let indexSpaces = (n - line) / 2; indexSpaces > 0; indexSpaces -= 1) {
+        spaces += " ";
+    }
+    if (line % 2 !== 0) {
+        console.log(spaces + piramid);
+    }
+}
+//ALELUIA IRMÃO, CONSEGUI! EU OUVI UM AMEM IGREJA? 
