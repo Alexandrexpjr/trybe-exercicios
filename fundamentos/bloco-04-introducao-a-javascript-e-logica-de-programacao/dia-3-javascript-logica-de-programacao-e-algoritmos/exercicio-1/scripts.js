@@ -4,7 +4,7 @@
 // 2) Criar um array do tamanho do número n;
 // 3) Fazer um loop que percorra todo o array;
 
-let n = 22;
+let n = 15;
 let square = "";
 console.log("Quadrado: ");
 
