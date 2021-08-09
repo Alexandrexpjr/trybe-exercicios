@@ -44,9 +44,16 @@
     <script>
         document.getElementsByTagName('p')[0].innerHTML = 'Uma descrição de como me vejo daqui a 2 anos.';
         document.getElementsByClassName('main-content')[0].style.backgroundColor = "rgb(76,164,109)";
-        
-        
-        /*
+        document.getElementsByClassName('center-content')[0].style.backgroundColor = "white";
+        document.getElementsByTagName('h1')[0].innerHTML = 'Exercício 5.1 - JavaScript';
+        let pArray = document.getElementsByTagName('p');
+        for (let i = 0; i < pArray.length; i += 1) {
+            document.getElementsByTagName('p')[i].style.textTransform = 'uppercase';
+        }
+        for (let i = 0; i < pArray.length; i += 1) {
+            console.log(document.getElementsByTagName('p')[i].innerHTML);
+        }
+            /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
         - document.getElementsByClassName()
