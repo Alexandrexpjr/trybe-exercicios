@@ -1,0 +1,35 @@
+<main id="paiDoPai">
+    <section id="pai">
+        <section id="primeiroFilho"></section>
+        <section id="elementoOndeVoceEsta">
+            <section id="primeiroFilhoDoFilho"></section>
+            <section id="segundoEUltimoFilhoDoFilho"></section>
+        </section>
+        Atenção!
+        <section id="terceiroFilho"></section>
+        <section id="quartoEUltimoFilho"></section>
+
+    </section>
+</main>
+<script>
+    let pai = document.querySelector('#pai');
+    let filho = document.querySelector('#elementoOndeVoceEsta');
+    let filhos = pai.children;
+
+    pai.removeChild(filhos[0]);
+    pai.removeChild(filhos[1]);
+    pai.removeChild(filhos[1]);
+    filho.removeChild(filho.children[1]);
+    pai.removeChild(pai.childNodes[3]);
+
+    // Não funciona pois ele remove em tempo real, e o indice vai mudando à medida que algo é removido;
+    // for (let index = 0; index < filhos.length; index += 1) {
+    //     let element = filhos[index];
+    //     if (element.id.includes('Filho')) {
+    //        pai.removeChild(element); 
+    //     }
+    // }
+
+</script>
+
+<!-- Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho -->
