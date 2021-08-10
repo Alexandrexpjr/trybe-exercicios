@@ -77,7 +77,13 @@
       let pParent = document.querySelector('.center-content');
       pParent.appendChild(paragraph);
       
-      
+      let leftSection = document.createElement('section');
+      leftSection.className = 'left-content';
+      sectionParent.appendChild(leftSection);
+
+      let rightSection = document.createElement('section');
+      rightSection.className = 'right-content';
+      sectionParent.appendChild(rightSection);
 
     </script>
   </body>
