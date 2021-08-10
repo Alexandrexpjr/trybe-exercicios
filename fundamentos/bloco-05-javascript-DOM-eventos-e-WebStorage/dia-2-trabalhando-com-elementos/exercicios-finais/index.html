@@ -85,6 +85,28 @@
       rightSection.className = 'right-content';
       sectionParent.appendChild(rightSection);
 
+      let image = document.createElement('img');
+      image.className = 'small-image';
+      image.src = 'https://picsum.photos/200';
+      let imageParent = document.querySelector('.left-content');
+      imageParent.appendChild(image);
+
+      let listOfNumbers = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      let ul = document.createElement('ul');
+      let listParent = document.querySelector('.right-content');
+      listParent.appendChild(ul);
+
+      for (let index = 0; index < listOfNumbers.length; index += 1) {
+        let li = document.createElement('li');
+        li.innerText = listOfNumbers[index];
+        listParent.firstElementChild.appendChild(li);
+      }
+
+      for (let index = 0; index < 3; index += 1) {
+        let h3 = document.createElement('h3');
+        h3.innerText = 'Insira o subtítulo aqui';
+        sectionParent.appendChild(h3);
+      }
     </script>
   </body>
 </html>
