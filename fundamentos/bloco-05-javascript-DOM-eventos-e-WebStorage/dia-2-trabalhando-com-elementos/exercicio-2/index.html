@@ -11,8 +11,9 @@
     </section>
 </main>
 <script>
-    document.querySelector('#pai').appendChild(document.createElement("section"));
-    let section = document.querySelector('#pai').appendChild(document.createElement("section"));
+    let test = document.createElement("section");
+    test.className = 'outroFilho';
+    document.querySelector('#pai').appendChild(test);
     document.querySelector('#elementoOndeVoceEsta').appendChild(document.createElement("section"));
     document.querySelector('#primeiroFilhoDoFilho').appendChild(document.createElement("footer"));
     document.querySelector('footer').parentElement.parentElement.nextElementSibling;
