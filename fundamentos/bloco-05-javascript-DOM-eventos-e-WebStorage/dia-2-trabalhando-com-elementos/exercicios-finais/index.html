@@ -67,6 +67,16 @@
       main.className = 'main-content';
       body.appendChild(main);
 
+      let section = document.createElement('section');
+      section.className = 'center-content';
+      let sectionParent = document.querySelector('.main-content');
+      sectionParent.appendChild(section);
+
+      let paragraph = document.createElement('p');
+      paragraph.innerHTML = 'Palavras sobre um fundo vermelho';
+      let pParent = document.querySelector('.center-content');
+      pParent.appendChild(paragraph);
+      
       
 
     </script>
