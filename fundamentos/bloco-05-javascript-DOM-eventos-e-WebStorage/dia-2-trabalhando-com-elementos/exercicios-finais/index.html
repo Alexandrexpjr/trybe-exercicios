@@ -47,7 +47,7 @@
         background-color: blue;
         width: 60%;
         margin-left: auto;
-        margin-right: 0;
+        margin-right: auto;
       }
 
       .main-content .description {
@@ -60,6 +60,7 @@
       // COLOQUE SEU CÓDIGO AQUI
       let body = document.querySelector('body');
       let h1 = document.createElement('h1');
+      h1.className = 'title';
       h1.innerHTML = 'Exercício 5.2 - JavaScript DOM';
       body.appendChild(h1);
 
@@ -105,8 +106,17 @@
       for (let index = 0; index < 3; index += 1) {
         let h3 = document.createElement('h3');
         h3.innerText = 'Insira o subtítulo aqui';
+        h3.className = 'description';
         sectionParent.appendChild(h3);
       }
+      
+      sectionParent.removeChild(imageParent);
+
+      document.querySelector('.main-content').style.backgroundColor = 'lightgreen';
+
+      ul.removeChild(ul.childNodes[9]);
+      ul.removeChild(ul.childNodes[8]);
+      
     </script>
   </body>
 </html>
