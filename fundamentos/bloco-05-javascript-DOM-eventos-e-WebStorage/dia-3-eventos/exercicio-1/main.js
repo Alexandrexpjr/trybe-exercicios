@@ -2,7 +2,7 @@ const firstLi = document.getElementById('first-Li');
 const secondLi = document.getElementById('second-Li');
 const thirdLi = document.getElementById('third-Li');
 const input = document.getElementById('input');
-const myWebpage = document.getElementById('my-spotrybefy');
+const myWebpage = document.getElementById('mySpotrybefy');
 
 
 
@@ -35,20 +35,34 @@ function addText(event) {
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portifólio?
 
+myWebpage.addEventListener('dblclick', function() {
+  window.location.replace('https://alexandrexpjr.github.io');
+})
+
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+
+myWebpage.addEventListener('mouseover', function() {
+  myWebpage.style.color = "blue";
+  // event.target.style.color = 'red' ~> outro jeito de fazer, testar embaixo
+})
+
+myWebpage.addEventListener('mouseout', function(event) {
+  // myWebpage.style.color = 'unset';
+  event.target.style.color = 'unset';
+})
 
 // Segue abaixo um exemplo do uso de event.target:
 // 
 
-// function resetText(event) {
+function resetText(event) {
 //   // O Event é passado como um parâmetro para a função.
-//   event.target.innerText = 'Opção reiniciada';
+  event.target.innerText = 'Opção reiniciada';
 //   // O event possui várias propriedades, porém a mais usada é o event.target,
 //   // que retorna o objeto que disparou o evento.
-// }
+}
 
-// firstLi.addEventListener('dblclick', resetText);
+firstLi.addEventListener('dblclick', resetText);
 
 // Não precisa passar o parâmetro dentro da callback resetText. O próprio
 // navegador fará esse trabalho por você, não é legal? Desse jeito, o
