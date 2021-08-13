@@ -11,11 +11,18 @@
 
 window.onload = function() {
     //seleciona a cor do BG
-    let select = document.querySelector('select');
+    let select = document.querySelector('#backgroundColor');
     let body = document.querySelector('body');
     select.addEventListener('change', function(event) {
-        let selected = select.selectedOptions[0];
-        localStorage.backgroundColor = event.target.selectedOptions[0].value;
+        let selected = event.target.selectedOptions[0];
+        localStorage.backgroundColor = selected.value;
         body.style.backgroundColor = localStorage.backgroundColor;
+    })
+    //seleciona a cor da letra
+    let colorSelect = document.querySelector('#color');
+    colorSelect.addEventListener('change', function(event) {
+        let selectedColor = event.target.selectedOptions[0];
+        localStorage.color = selectedColor.value;
+        body.style.color = localStorage.color;
     })
 }
