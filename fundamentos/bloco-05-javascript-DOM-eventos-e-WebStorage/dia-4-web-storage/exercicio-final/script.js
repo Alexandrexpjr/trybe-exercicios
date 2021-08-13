@@ -8,3 +8,14 @@
 // Espaçamento entre as linhas do texto;
 // Tipo da fonte ( Font family ).
 // Essas preferências devem ser salvas de forma que, ao retornar à página, as preferências que foram previamente configuradas possam ser aplicadas na tela.
+
+window.onload = function() {
+    //seleciona a cor do BG
+    let select = document.querySelector('select');
+    let body = document.querySelector('body');
+    select.addEventListener('change', function(event) {
+        let selected = select.selectedOptions[0];
+        localStorage.backgroundColor = event.target.selectedOptions[0].value;
+        body.style.backgroundColor = localStorage.backgroundColor;
+    })
+}
