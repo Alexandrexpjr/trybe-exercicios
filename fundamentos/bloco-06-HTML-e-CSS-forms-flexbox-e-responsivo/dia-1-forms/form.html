@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de currículo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <fieldset>
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" maxlength="40" required>
+        
+        <label for="email">Email: </label>
+        <input type="email" name="email" maxlength="50" required>
+        
+        <label for="cpf">CPF: </label>
+        <input type="text" name="cpf" id="cpf" maxlength="11" required>
+
+        <label for="endereço">Endereço: </label>
+        <input type="text" name="endereço" id="endereco" maxlength="200" required>
+
+        <label for="cidade">Cidade: </label>
+        <input type="text" name="cidade" id="cidade" maxlength="28" required>
+
+        <label for="estado">Estado: </label>
+        <select name="estado" id="estado" required>
+
+        </select>
+
+        <p>Tipo:</p>
+        <input type="radio" name="moradia" id="casa" required> 
+        <label for="moradia">Casa</label>
+
+        <input type="radio" name="moradia" id="apto" required> 
+        <label for="moradia">Apartamento</label>
+
+    </fieldset>
+
+    <fieldset>
+        <label for="resumo">Resumo do currículo: </label>
+        <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" required></textarea>
+
+        <label for="cargo">Cargo: </label>
+        <input type="text" name="cargo" id="cargo" maxlength="40" required>
+
+        <label for="descriçãoCargo">Descrição do cargo: </label>
+        <input type="text" name="descriçãoCargo" id="descricaoCargo" maxlength="500" required>
+
+        <label for="dataInicio">Data de início: </label>
+        <input type="text" name="dataInicio" id="dataInicio" placeholder="dd/mm/aaaa" required>
+
+        <button type="submit" id="enviar">Enviar</button>
+
+        <button id="limpar">Limpar</button>
+    </fieldset>
+    <script src="/script.js"></script>
+</body>
+</html>
+
+<!-- 
+o
+Data de início - Texto
+Verificar o formato da data dd/mm/aaaa .
+O dia deve ser > 0 e <= 31.
+O mês deve ser > 0 e <= 12.
+O ano não pode ser negativo.
+Caso alguma das condições seja inválida no momento do envio do formulário, exibir via alert uma mensagem de erro contextualizada.
+Campo obrigatório
+Logo abaixo do formulário, crie um botão que:
+Chame uma função JavaScript e interrompa o fluxo automático do form utilizando o preventDefault() . Note que isso vai impedir as validações do HTML ao fazer o submit
+Implemente, agora, no Javascript , as validações que foram pedidas ao longo da montagem do formulário.
+Caso todos os dados sejam válidos, monte uma <div> com o consolidado dos dados que foram inseridos no formulário.
+Caso haja algum dado inválido, mostre em uma <div> uma mensagem de erro. Se o erro for na Data de Início , a mensagem deve ser contextualizada.
+Crie um botão Limpar que limpa todos os campos do formulário e a <div> com seu currículo também. --> 
