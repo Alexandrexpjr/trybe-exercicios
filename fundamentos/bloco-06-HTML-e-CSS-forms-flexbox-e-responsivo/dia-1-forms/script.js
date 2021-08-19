@@ -4,6 +4,7 @@ const getDate = document.getElementById('dataInicio');
 const getSubmit = document.getElementById('enviar');
 const getForm = document.getElementById('form');
 const getDiv = document.getElementById('relatorio');
+const getClear = document.getElementById('limpar');
 
 for(let estado of estados) {
     const createOption = document.createElement('option');
@@ -12,21 +13,23 @@ for(let estado of estados) {
 }
 
 function checkDate() {
-    let data = getDate.value;
-    let day = parseInt(data.slice(0, 2));
-    let month = parseInt(data.slice(3,5));
-    let year = parseInt(data.slice(6));
-    let slashes = data.slice(2,3) + data.slice(5,6);
+    const data = getDate.value;
+    const day = parseInt(data.slice(0, 2));
+    const month = parseInt(data.slice(3,5));
+    const year = parseInt(data.slice(6));
+    const slashes = data.slice(2,3) + data.slice(5,6);
 
-    if(day < 1 || day > 31) return alert('Dia inválido!');
-    if(month < 1 || month > 12) return alert('Mês inválido!');
-    if(year < 0) return alert('Ano inválido!');
-    if(slashes !== '//') return alert('Data inválida!');  
+    if (!data) return getDate.value = '';
+    if (day < 1 || day > 31) return alert('Dia inválido!');
+    if (month < 1 || month > 12) return alert('Mês inválido!');
+    if (year < 0) return alert('Ano inválido!');
+    if (slashes !== '//') return alert('Data inválida!');  
 
     return console.log(day, month, year, slashes);
 }
 
 function getInfo(event) {
+    //usei o preventDefault no form e não no button, com a ajuda de um amigo;
     event.preventDefault();
     const fields = event.target.elements;
     const result = `Nome: ${fields['nome'].value} <br>` +
@@ -43,5 +46,10 @@ function getInfo(event) {
     getDiv.innerHTML = result;
 }
 
+function clearAll() {
+    getDiv.innerHTML = '';
+}
+
 getDate.addEventListener('focusout', checkDate);
 getForm.addEventListener('submit', getInfo);
+getClear.addEventListener('click', clearAll);
