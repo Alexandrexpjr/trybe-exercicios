@@ -5,56 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de currículo</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
-    <form action="" method="get" name="formulario" id="form">
-        <fieldset>
-            <label for="nome">Nome: </label>
-            <input type="text" name="nome" maxlength="40" class="resultado" required>
+    <form action="" method="get" name="formulario" id="form" class="container">
+        <fieldset class="container">
+
+            <label for="nome" class="form-label ">Nome: </label>
+            <div class="input-group mb-3">
+                <input type="text"  name="nome" maxlength="40" class="resultado form-control form-control" required>
+            </div>
             
-            <label for="email">Email: </label>
-            <input type="email" name="email" maxlength="50" class="resultado" required>
+            <label for="email" class="form-labe l">Email: </label>       
+            <div class="input-group mb-3">
+                <input type="email " name="email" maxlength="50" placeholder="exemplo@email.com" class="resultado form-control" required>
+            </div>
             
-            <label for="cpf">CPF: </label>
-            <input type="text" name="cpf" id="cpf" maxlength="11" class="resultado" required>
+            <label for="cpf" class="form-label" >CPF: </label>
+            <div class="input-group mb-3">
+                <input type="text"  name="cpf" id="cpf" maxlength="11" placeholder="Digite somente os números. Exemplo: 12345678900" class="resultado form-control" required>
+            </div>
     
-            <label for="endereco">Endereço: </label>
-            <input type="text" name="endereco" id="endereco" maxlength="200" class="resultado" required>
+            <label for="endereco" class="form-label">Endereço: </label>
+            <div class="input-group mb-3">
+                <input type="text"  name="endereco" id="endereco" maxlength="200" class="resultado form-control" required>
+            </div>
     
-            <label for="cidade">Cidade: </label>
-            <input type="text" name="cidade" id="cidade" maxlength="28" class="resultado" required>
+            <label for="cidade" class="form-label">Cidade: </label>
+            <div class="input-group mb-3">
+                <input type="text"  name="cidade" id="cidade" maxlength="28" class="resultado form-control" required>
+            </div>
     
-            <label for="estado">Estado: </label>
-            <select name="estado" id="estado" class="resultado" required>
-    
-            </select>
+            <label for="estado" class="form-label">Estado: </label>
+            <div class="input-group mb-3">
+                <select name="estado" id="estado" class="resultado form-control" required>
+                </select>
+            </div>
     
             <p>Tipo:</p>
-            <input type="radio" value="Casa" name="moradia" id="casa" class="resultado" required> 
-            <label for="moradia">Casa</label>
-    
-            <input type="radio" value="Apartamento" name="moradia" id="apto" class="resultado" required> 
-            <label for="moradia">Apartamento</label>
-    
+            <div>       
+                <input type="radio" value="Casa" name="moradia" id="casa" class="resultado" required>
+                <label for="moradia" class="form-label">Casa</label>
+            </div>
+
+            <div class="mb-3">            
+                <input type="radio" value="Apartamento" name="moradia" id="apto" class="resultado" required> 
+                <label for="moradia" class="form-label">Apartamento</label>
+            </div>
+            
+
         </fieldset>
     
-        <fieldset>
-            <label for="resumo">Resumo do currículo: </label>
-            <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" class="resultado" required></textarea>
+        <fieldset class="container">
+            
+            <label for="resumo" class="form-label">Resumo do currículo: </label>
+            <div class="input-group mb-3">
+                <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" class="resultado form-control" required></textarea>
+            </div>
     
-            <label for="cargo">Cargo: </label>
-            <input type="text" name="cargo" id="cargo" maxlength="40" class="resultado" required>
+            <label for="cargo" class="form-label">Cargo: </label>
+            <div class="input-group mb-3">
+                <input type="text"  name="cargo" id="cargo" maxlength="40" class="resultado form-control" required>
+            </div>
     
-            <label for="descricaoCargo">Descrição do cargo: </label>
-            <input type="text" name="descricaoCargo" id="descricaoCargo" maxlength="500" class="resultado" required>
+            <label for="descricaoCargo" class="form-label">Descrição do cargo: </label>
+            <div class="input-group mb-3">
+                <input type="text"  name="descricaoCargo" id="descricaoCargo" maxlength="500" class="resultado form-control" required>
+            </div>
     
-            <label for="dataInicio">Data de início: </label>
-            <input type="text" name="dataInicio" id="dataInicio" placeholder="dd/mm/aaaa" class="resultado" required>
-    
-            <button type="submit" id="enviar">Enviar</button>
-    
-            <button type="reset" id="limpar">Limpar</button>
+            <label for="dataInicio" class="form-label">Data de início: </label>
+            <div class="input-group mb-3">
+                <input type="text"  name="dataInicio" id="dataInicio" placeholder="dd/mm/aaaa" class="resultado form-control" required>
+            </div>
+
+            <div class="text-end">
+                <button type="reset" id="limpar" class="btn btn-danger me-2">Limpar</button>
+                <button type="submit" id="enviar" class="btn btn-success">Enviar</button>                
+            </div>
         </fieldset>
     </form>
     <div id="relatorio">
