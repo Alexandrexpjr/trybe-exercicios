@@ -8,53 +8,58 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <fieldset>
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome" maxlength="40" required>
+    <form action="" method="get" name="formulario" id="form">
+        <fieldset>
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" maxlength="40" class="resultado" required>
+            
+            <label for="email">Email: </label>
+            <input type="email" name="email" maxlength="50" class="resultado" required>
+            
+            <label for="cpf">CPF: </label>
+            <input type="text" name="cpf" id="cpf" maxlength="11" class="resultado" required>
+    
+            <label for="endereco">Endereço: </label>
+            <input type="text" name="endereco" id="endereco" maxlength="200" class="resultado" required>
+    
+            <label for="cidade">Cidade: </label>
+            <input type="text" name="cidade" id="cidade" maxlength="28" class="resultado" required>
+    
+            <label for="estado">Estado: </label>
+            <select name="estado" id="estado" class="resultado" required>
+    
+            </select>
+    
+            <p>Tipo:</p>
+            <input type="radio" value="Casa" name="moradia" id="casa" class="resultado" required> 
+            <label for="moradia">Casa</label>
+    
+            <input type="radio" value="Apartamento" name="moradia" id="apto" class="resultado" required> 
+            <label for="moradia">Apartamento</label>
+    
+        </fieldset>
+    
+        <fieldset>
+            <label for="resumo">Resumo do currículo: </label>
+            <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" class="resultado" required></textarea>
+    
+            <label for="cargo">Cargo: </label>
+            <input type="text" name="cargo" id="cargo" maxlength="40" class="resultado" required>
+    
+            <label for="descricaoCargo">Descrição do cargo: </label>
+            <input type="text" name="descricaoCargo" id="descricaoCargo" maxlength="500" class="resultado" required>
+    
+            <label for="dataInicio">Data de início: </label>
+            <input type="text" name="dataInicio" id="dataInicio" placeholder="dd/mm/aaaa" class="resultado" required>
+    
+            <button type="submit" id="enviar">Enviar</button>
+    
+            <button id="limpar">Limpar</button>
+        </fieldset>
+    </form>
+    <div id="relatorio">
         
-        <label for="email">Email: </label>
-        <input type="email" name="email" maxlength="50" required>
-        
-        <label for="cpf">CPF: </label>
-        <input type="text" name="cpf" id="cpf" maxlength="11" required>
-
-        <label for="endereço">Endereço: </label>
-        <input type="text" name="endereço" id="endereco" maxlength="200" required>
-
-        <label for="cidade">Cidade: </label>
-        <input type="text" name="cidade" id="cidade" maxlength="28" required>
-
-        <label for="estado">Estado: </label>
-        <select name="estado" id="estado" required>
-
-        </select>
-
-        <p>Tipo:</p>
-        <input type="radio" name="moradia" id="casa" required> 
-        <label for="moradia">Casa</label>
-
-        <input type="radio" name="moradia" id="apto" required> 
-        <label for="moradia">Apartamento</label>
-
-    </fieldset>
-
-    <fieldset>
-        <label for="resumo">Resumo do currículo: </label>
-        <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" required></textarea>
-
-        <label for="cargo">Cargo: </label>
-        <input type="text" name="cargo" id="cargo" maxlength="40" required>
-
-        <label for="descriçãoCargo">Descrição do cargo: </label>
-        <input type="text" name="descriçãoCargo" id="descricaoCargo" maxlength="500" required>
-
-        <label for="dataInicio">Data de início: </label>
-        <input type="text" name="dataInicio" id="dataInicio" placeholder="dd/mm/aaaa" required>
-
-        <button type="submit" id="enviar">Enviar</button>
-
-        <button id="limpar">Limpar</button>
-    </fieldset>
+    </div>
     <script src="/script.js"></script>
 </body>
 </html>
