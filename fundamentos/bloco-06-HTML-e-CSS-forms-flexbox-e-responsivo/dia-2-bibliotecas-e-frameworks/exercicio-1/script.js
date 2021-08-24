@@ -53,3 +53,18 @@ function clearAll() {
 getDate.addEventListener('focusout', checkDate);
 getForm.addEventListener('submit', getInfo);
 getClear.addEventListener('click', clearAll);
+
+validation.init("form");
+
+validation.rules["cpf"] = {
+    message: "Digite somente os números",
+    method: validaCPF
+}
+
+function validaCPF(input) {
+    if (input.value.length === 11) {
+        return true;
+    } else {
+        return false;
+    }
+}
