@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,10 @@
     <title>Formulário de currículo</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="validation.min.css" rel="stylesheet">
+    <script src="validation.min.js"></script>
+    <link rel="stylesheet" href="DatePickerX.min.css">
+    <script src="DatePickerX.min.js"></script>
 </head>
 <body>
     <form action="" method="get" name="formulario" id="form" class="container">
@@ -14,43 +18,43 @@
 
             <label for="nome" class="form-label ">Nome: </label>
             <div class="input-group mb-3">
-                <input type="text"  name="nome" maxlength="40" class="resultado form-control form-control" required>
+                <input type="text"  name="nome" maxlength="40" class="resultado validate form-control form-control" data-validate="required">
             </div>
             
             <label for="email" class="form-labe l">Email: </label>       
             <div class="input-group mb-3">
-                <input type="email " name="email" maxlength="50" placeholder="exemplo@email.com" class="resultado form-control" required>
+                <input type="email " name="email" maxlength="50" placeholder="exemplo@email.com" class="resultado validate form-control" data-validate="required, email">
             </div>
             
             <label for="cpf" class="form-label" >CPF: </label>
             <div class="input-group mb-3">
-                <input type="text"  name="cpf" id="cpf" maxlength="11" placeholder="Digite somente os números. Exemplo: 12345678900" class="resultado form-control" required>
+                <input type="text"  name="cpf" id="cpf" placeholder="Digite somente os números. Exemplo: 12345678900" class="resultado validate form-control" data-validate="required, cpf">
             </div>
     
             <label for="endereco" class="form-label">Endereço: </label>
             <div class="input-group mb-3">
-                <input type="text"  name="endereco" id="endereco" maxlength="200" class="resultado form-control" required>
+                <input type="text"  name="endereco" id="endereco" maxlength="200" class="resultado validate form-control" data-validate="required">
             </div>
     
             <label for="cidade" class="form-label">Cidade: </label>
             <div class="input-group mb-3">
-                <input type="text"  name="cidade" id="cidade" maxlength="28" class="resultado form-control" required>
+                <input type="text"  name="cidade" id="cidade" maxlength="28" class="resultado validate form-control" data-validate="required">
             </div>
     
             <label for="estado" class="form-label">Estado: </label>
             <div class="input-group mb-3">
-                <select name="estado" id="estado" class="resultado form-control" required>
+                <select name="estado" id="estado" class="resultado validate form-control" data-validate="required">
                 </select>
             </div>
     
             <p>Tipo:</p>
             <div>       
-                <input type="radio" value="Casa" name="moradia" id="casa" class="resultado" required>
+                <input type="radio" value="Casa" name="moradia" id="casa" class="resultado validate">
                 <label for="moradia" class="form-label">Casa</label>
             </div>
 
             <div class="mb-3">            
-                <input type="radio" value="Apartamento" name="moradia" id="apto" class="resultado" required> 
+                <input type="radio" value="Apartamento" name="moradia" id="apto" class="resultado validate"> 
                 <label for="moradia" class="form-label">Apartamento</label>
             </div>
             
@@ -61,22 +65,22 @@
             
             <label for="resumo" class="form-label">Resumo do currículo: </label>
             <div class="input-group mb-3">
-                <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" class="resultado form-control" required></textarea>
+                <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" class="resultado validate form-control" data-validate="required"></textarea>
             </div>
     
             <label for="cargo" class="form-label">Cargo: </label>
             <div class="input-group mb-3">
-                <input type="text"  name="cargo" id="cargo" maxlength="40" class="resultado form-control" required>
+                <input type="text"  name="cargo" id="cargo" maxlength="40" class="resultado validate form-control" data-validate="required">
             </div>
     
             <label for="descricaoCargo" class="form-label">Descrição do cargo: </label>
             <div class="input-group mb-3">
-                <input type="text"  name="descricaoCargo" id="descricaoCargo" maxlength="500" class="resultado form-control" required>
+                <input type="text"  name="descricaoCargo" id="descricaoCargo" maxlength="500" class="resultado validate form-control" data-validate="required">
             </div>
     
             <label for="dataInicio" class="form-label">Data de início: </label>
             <div class="input-group mb-3">
-                <input type="text"  name="dataInicio" id="dataInicio" placeholder="dd/mm/aaaa" class="resultado form-control" required>
+                <input type="text"  name="dataInicio" id="dataInicio" placeholder="dd/mm/aaaa" class="resultado validate form-control" data-validate="required">
             </div>
 
             <div class="text-end">

@@ -1,3 +1,24 @@
+
+validation.init("form");
+
+validation.rules["cpf"] = {
+    message: "Digite somente os números",
+    method: validaCPF
+}
+
+function validaCPF(input) {
+    if (input.value.length === 11) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+document.getElementById('dataInicio').DatePickerX.init({
+    format: 'dd/mm/yyyy'
+});
+
+
 const estados = ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"];
 const getEstado = document.getElementById('estado');
 const getDate = document.getElementById('dataInicio');
