@@ -1,0 +1,140 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-content: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #af2a2f;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header ul {
+    display: flex;
+    list-style: none
+}
+
+header ul li {
+    padding: 0 3px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+h1 {
+    font-size: x-large;
+}
+
+h2 {
+    font-size: large;
+}
+
+.aside-one, .aside-two, .main-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.aside-one {
+    margin-top: 50px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+    header {
+        font-weight: 500;
+        font-size: large;
+        padding: 0 20px;
+    }
+    .container {
+        display: block;
+        line-height: 150%;
+    }
+    .aside-one {
+        width: 20%;
+        float: left;
+    }
+    .aside-two {
+        font-size: 14px;
+        width: 100%;
+    }
+    .aside-two ul {
+        display: flex;
+    }
+    .aside-two ul li {
+        padding-right: 10px;
+    }
+    .main-content {
+        margin: 30px 0;
+        width: 75%;
+        float: left;
+        padding: 0 10px;
+    }
+    footer {
+        clear: both;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    header {
+        align-items: center;
+    }
+    header p{
+        font-weight: 600;
+        font-size: x-large;
+    }
+    .container {
+        line-height: 150%;
+    }
+    .aside-one {
+        width: 100%;
+        display: flex;
+        /* flex-wrap: wrap; */
+        position: fixed;
+        top: 20px;
+        font-size: 14px;
+        background-color: #c2c2c2;
+    }
+    .aside-one h2 {
+        margin-right: 15px;
+    }
+    .test {
+        display: flex;
+        flex-wrap: wrap;  
+    }
+    .test ul li {
+        width: 10%;
+    }
+    .aside-two {
+        font-size: 14px;
+        width: 100%;
+    }
+    .aside-two ul, .aside-one ul{
+        display: flex;
+    }
+    .aside-two ul li {
+        padding-right: 10px;
+    }
+    .main-content {
+        margin: 200px 0;
+        width: 100%;
+        padding: 0 10px;
+    }
+    footer {
+        clear: both;
+    }
+}       
