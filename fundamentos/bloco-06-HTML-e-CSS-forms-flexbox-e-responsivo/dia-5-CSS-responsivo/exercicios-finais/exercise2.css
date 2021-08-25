@@ -88,3 +88,53 @@ h2 {
         clear: both;
     }
 }
+
+@media screen and (min-width:1024px) {
+    header {
+        align-items: center;
+    }
+    header p{
+        font-weight: 600;
+        font-size: x-large;
+    }
+    .container {
+        line-height: 150%;
+    }
+    .aside-one {
+        width: 100%;
+        display: flex;
+        /* flex-wrap: wrap; */
+        position: fixed;
+        top: 20px;
+        font-size: 14px;
+        background-color: #c2c2c2;
+    }
+    .aside-one h2 {
+        margin-right: 15px;
+    }
+    .test {
+        display: flex;
+        flex-wrap: wrap;  
+    }
+    .test ul li {
+        width: 10%;
+    }
+    .aside-two {
+        font-size: 14px;
+        width: 100%;
+    }
+    .aside-two ul, .aside-one ul{
+        display: flex;
+    }
+    .aside-two ul li {
+        padding-right: 10px;
+    }
+    .main-content {
+        margin: 200px 0;
+        width: 100%;
+        padding: 0 10px;
+    }
+    footer {
+        clear: both;
+    }
+}       
