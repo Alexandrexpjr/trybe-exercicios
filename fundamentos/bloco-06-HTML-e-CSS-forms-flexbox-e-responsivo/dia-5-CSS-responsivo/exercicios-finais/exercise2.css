@@ -32,6 +32,11 @@ header ul li {
     padding: 0 3px;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 h1 {
     font-size: x-large;
 }
