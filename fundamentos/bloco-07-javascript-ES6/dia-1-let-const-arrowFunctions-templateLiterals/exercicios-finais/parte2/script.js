@@ -45,3 +45,27 @@ getButton.addEventListener('click', () => {
 })
 
 // Parte 4
+
+function alteraString (string) {
+    const stringQualquer = "Tryber x aqui!"
+    let arr = stringQualquer.split(' ');
+    for (let i = 0; i < arr.length; i += 1) {
+        if (arr[i] === 'x') arr[i] = string;
+    }
+    return `${arr.join(' ')}`;
+}
+const saida = alteraString('Alexandre');
+
+const skills = ['HTML', 'Javascript', 'CSS', 'Raciocínio Lógico', 'Empatia'];
+
+function concatenar (saida) {
+    return `${saida} Minhas cinco principais habilidades são:
+    ${skills[0]},
+    ${skills[1]},
+    ${skills[2]},
+    ${skills[3]},
+    ${skills[4]}.
+    #goTrybe`
+}
+
+console.log(concatenar(saida));
