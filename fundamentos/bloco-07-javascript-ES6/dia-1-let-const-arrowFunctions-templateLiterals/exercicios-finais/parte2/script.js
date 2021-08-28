@@ -1,5 +1,22 @@
+const fatorial = (number) => {
+    let fatorial = number;
+    for (let i = number - 1; i > 0; i -= 1) {
+        fatorial *= i;
+    }
+    return fatorial;
+}
 
-    // Crie uma função que receba um número e retorne seu fatorial.
+console.log(fatorial(5));
 
-    // Na matemática, o fatorial de um número não negativo N , com a notação N! , é o produto de todos os inteiros menores ou iguais a N . Exemplo: 4! = 4 * 3 * 2 * 1 = 24.
-    // Bônus (opcional): tente fazer o mesmo exercício de forma recursiva . Spoiler: É possível resolver com uma linha usando ternary operator .
+
+function fatorialRecursivo(n) {
+    const isOne = (n === 1) ? 1 : n * fatorialRecursivo(n-1);
+    return isOne; 
+}
+console.log(fatorialRecursivo(6));
+
+
+const fatorialRecursivoSimplificado = n => (n === 1) ? 1 : n * fatorialRecursivoSimplificado(n-1); 
+
+console.log(fatorialRecursivoSimplificado(7));
+
