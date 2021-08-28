@@ -20,3 +20,15 @@ const fatorialRecursivoSimplificado = n => (n === 1) ? 1 : n * fatorialRecursivo
 
 console.log(fatorialRecursivoSimplificado(7));
 
+const longestWord = phrase => {
+    const arr = phrase.split(' ');
+    let word = arr[0];
+    for (let i = 1; i < arr.length; i += 1) {
+        if (arr[i].length > word.length) {
+            word = arr[i];
+        }
+    }
+    return word;
+}
+
+console.log(longestWord("Antônio foi no banheiro e não sabemos o que aconteceu"));
