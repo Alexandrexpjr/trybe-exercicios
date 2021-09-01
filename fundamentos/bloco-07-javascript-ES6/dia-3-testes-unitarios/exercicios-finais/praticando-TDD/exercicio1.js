@@ -17,6 +17,3 @@ const output = addOne(myArray);
 assert.strictEqual(typeof addOne, 'function');
 assert.deepStrictEqual(output, expected);
 assert.deepStrictEqual(myArray, unchanged);
-
-// 2) Escreva a função wordLengths para passar nos testes já implementados.
-
