@@ -64,3 +64,13 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+
+const expectedResult = true;
+
+function someBookWasReleaseOnThe80s() {
+  // escreva seu código aqui
+  const book80s = books.some(book => book.releaseYear >= 1980 && book.releaseYear < 1990);
+  return book80s;
+}
+
+assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult);
