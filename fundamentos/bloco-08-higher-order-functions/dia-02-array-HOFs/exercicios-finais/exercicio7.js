@@ -64,3 +64,24 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+
+const expectedResult = false;
+
+function authorUnique() {
+  // escreva seu código aqui
+  // teste com sort
+  let uniqueAuthor = true;
+  const sortedBooks = books.sort((a, b) => {
+    if (a.author.birthYear > b.author.birthYear) {
+      return -1;
+    } else if (a.author.birthYear < b.author.birthYear){
+      return 1;
+    } else {
+      uniqueAuthor = false;
+      return 0;
+    }
+  });
+  return uniqueAuthor;
+}
+
+assert.strictEqual(authorUnique(), expectedResult);
