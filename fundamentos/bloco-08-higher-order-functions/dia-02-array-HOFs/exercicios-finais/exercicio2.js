@@ -64,3 +64,17 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+
+function smallerName() {
+  let nameBook = books[0].name;
+  // escreva aqui o seu código
+  books.forEach((element, index) => {
+    if (element.name.length < nameBook.length) {
+      nameBook = element.name;
+    }
+  })
+  // Variável nameBook que receberá o valor do menor nome;
+  return nameBook;
+}
+
+assert.strictEqual(smallerName(), 'Duna');
