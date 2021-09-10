@@ -65,15 +65,15 @@ const books = [
 
 // Adicione o código do exercício aqui:
 
-const expectedResult = [
-  'O Senhor dos Anéis',
-  'Fundação',
-  'O Chamado de Cthulhu',
-];
+const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
-function oldBooks() {
+function reduceNames() {
   // escreva seu código aqui
-  return books.filter((book) => 2022 - book.releaseYear > 60).map((book) => book.name);
+  return books.
+  reduce((acc, curr, index, array) => {
+    if (index === array.length - 1) return `${acc} ${curr.author.name}.`
+    return `${acc} ${curr.author.name},`
+  }, '').trim();
 }
 
-assert.deepStrictEqual(oldBooks(), expectedResult);
+assert.strictEqual(reduceNames(), expectedResult);

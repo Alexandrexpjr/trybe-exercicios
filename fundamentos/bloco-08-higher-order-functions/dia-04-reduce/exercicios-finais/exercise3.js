@@ -65,15 +65,15 @@ const books = [
 
 // Adicione o código do exercício aqui:
 
-const expectedResult = [
-  'O Senhor dos Anéis',
-  'Fundação',
-  'O Chamado de Cthulhu',
-];
+const expectedResult = 43;
 
-function oldBooks() {
+function averageAge() {
   // escreva seu código aqui
-  return books.filter((book) => 2022 - book.releaseYear > 60).map((book) => book.name);
+  const numberOfBooks = books.length;
+  const age = books.reduce((acc, curr) => {
+    return acc + (curr.releaseYear - curr.author.birthYear);
+  }, 0)
+  return age / numberOfBooks;
 }
 
-assert.deepStrictEqual(oldBooks(), expectedResult);
+assert.strictEqual(averageAge(), expectedResult);

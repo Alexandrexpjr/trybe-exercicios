@@ -65,15 +65,20 @@ const books = [
 
 // Adicione o código do exercício aqui:
 
-const expectedResult = [
-  'O Senhor dos Anéis',
-  'Fundação',
-  'O Chamado de Cthulhu',
-];
-
-function oldBooks() {
-  // escreva seu código aqui
-  return books.filter((book) => 2022 - book.releaseYear > 60).map((book) => book.name);
+const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
 }
 
-assert.deepStrictEqual(oldBooks(), expectedResult);
+function longestNamedBook() {
+  // escreva seu código aqui
+  return books.reduce((biggerName, actualName) => (actualName.name.length > biggerName.name.length) ? actualName : biggerName);
+}
+
+assert.deepStrictEqual(longestNamedBook(), expectedResult);
