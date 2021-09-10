@@ -69,6 +69,7 @@ const expectedResult = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
   // escreva seu código aqui
+  
 }
 
 assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
