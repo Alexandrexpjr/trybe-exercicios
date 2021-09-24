@@ -48,6 +48,6 @@ describe('Testando três parâmetros multiplicados, depois um só dobrado', () =
     expect(randomNumber).toHaveBeenCalled();
     expect(randomNumber).toHaveBeenCalledTimes(1);
     expect(randomNumber(10)).toBe(20);
-    expect(randomNumber).toHaveBeenCalledTimes(2)
+    expect(randomNumber).toHaveBeenCalledTimes(2);
   })
 })
