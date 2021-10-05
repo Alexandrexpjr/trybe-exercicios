@@ -4,9 +4,22 @@
   box-sizing: border-box;
 }
 
+.all-content {
+  text-align: center;
+}
+
+.all-content h1 {
+  padding: 15px 0;
+}
+
+.more-info {
+  font-style: italic;
+}
+
 .wrapper {
   display: flex;
   width: 80%;
+  margin: 0 auto;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -24,6 +37,7 @@
 .info {
   display: flex;
   flex-direction: column;
+  margin-right: 30px;
 }
 
 .info .name {
