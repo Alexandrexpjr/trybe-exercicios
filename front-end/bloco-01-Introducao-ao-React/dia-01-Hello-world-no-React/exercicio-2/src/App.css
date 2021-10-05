@@ -1,0 +1,13 @@
+.Content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  color: wheat;
+  background-image: url("./haunter.jpg");
+  background-position: center center;
+}
+
+.list {
+  font-size: 18px;
+}
+
