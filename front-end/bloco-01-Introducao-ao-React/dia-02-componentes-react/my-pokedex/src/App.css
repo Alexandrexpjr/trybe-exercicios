@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.all-content {
+  text-align: center;
+}
+
+.all-content h1 {
+  padding: 15px 0;
+}
+
+.more-info {
+  font-style: italic;
+}
+
+.wrapper {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokemon {
+  display: flex;
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  line-height: 150%;
+  margin: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.info .name {
+  font-size: 1.1rem;
+}
