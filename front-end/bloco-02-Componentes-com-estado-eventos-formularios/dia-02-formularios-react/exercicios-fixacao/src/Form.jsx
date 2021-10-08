@@ -28,8 +28,8 @@ class Form extends React.Component {
         <form className="form">
           <fieldset>
             <legend>Dados pessoais</legend>
-            <Email handleChange={this.handleChange}/>
-            <Name handleChange={this.handleChange} />
+            <Email handleChange={this.handleChange} value={this.state.email}/>
+            <Name handleChange={this.handleChange} value={this.state.name}/>
           </fieldset>
           <label className="form-label">
             Escolha seu estado:
