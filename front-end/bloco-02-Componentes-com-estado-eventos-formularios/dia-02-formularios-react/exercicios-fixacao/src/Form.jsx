@@ -11,25 +11,45 @@ class Form extends React.Component {
       email: '',
       info: '',
       agree: false,
+      formularioComErros: true,
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleError = this.handleError.bind(this);
   }
 
   handleChange({ target }) {
+    console.log()
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: value,
-    })
+    }, () => { this.handleError(); });
   }
+
+  handleError() {
+    const { name, email, agree } = this.state;
+
+    const errorCases = [
+      !(name.length < 20),
+      !(email.includes('@')),
+      !agree,
+    ];
+
+    const formularioPreenchido = errorCases.every((error) => error !== true);
+
+    this.setState({
+      formularioComErros: !formularioPreenchido,
+    });
+  }
+
   render() {
     return(
       <div>
         <form className="form">
           <fieldset>
             <legend>Dados pessoais</legend>
-            <Email handleChange={this.handleChange} value={this.state.email}/>
-            <Name handleChange={this.handleChange} value={this.state.name}/>
+            <Email handleChange={this.handleChange} value={this.state.email} />
+            <Name handleChange={this.handleChange} value={this.state.name} />
           </fieldset>
           <label className="form-label">
             Escolha seu estado:
@@ -52,6 +72,9 @@ class Form extends React.Component {
             <input type="file" name="file" id="file-input" />
           </label>
         </form>
+        { this.state.formularioComErros
+            ? <span style={ { color: 'red' } }>Preencha todos os campos</span>
+            : <span style={ { color: 'green' } }>Todos campos foram preenchidos</span> }
       </div>
     )
   }
