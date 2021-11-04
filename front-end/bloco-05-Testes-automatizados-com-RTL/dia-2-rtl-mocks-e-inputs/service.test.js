@@ -31,14 +31,6 @@ describe('Testando a função randomNumber', () => {
   });
 });
 
-// A. Faça o mock das funções para com os seguintes casos:
-// Desenvolva uma nova implementação para a primeira função: agora ela deve retornar a string em caixa baixa.
-// Defina, para a segunda função, uma nova implementação: ela deve retornar a última letra de uma string.
-// Implemente, na terceira função: ela deve receber três strings e concatená-las.
-// B. Após criar os mocks, faça os testes necessários para garantir que os mocks estão funcionando.
-// C. Após criar os testes, restaure a implementação da primeira função.
-// Faça o teste necessário para garantir que a implementação da função foi restaurado.
-
 describe('Testando as funçoes relacionadas à strings', () => {
   it('testes com o mock da primeira função', () => {
     mockUpperCase = jest
@@ -61,7 +53,31 @@ describe('Testando as funçoes relacionadas à strings', () => {
     expect(service.concatStrings('oi, ', 'tudo ', 'bem?')).toBe('oi, tudo bem?');
     expect(service.concatStrings).toHaveBeenCalledTimes(1);
   });
-})
+});
+
+describe("testando a requisição", () => {
+  service.fetchDog = jest.fn();
+  afterEach(service.fetchDog.mockReset);
+
+  test("testando requisição caso a promisse resolva", async () => {
+    service.fetchDog.mockResolvedValue("request sucess");
+
+    service.fetchDog();
+    expect(service.fetchDog).toHaveBeenCalled();
+    expect(service.fetchDog).toHaveBeenCalledTimes(1);
+    await expect(service.fetchDog()).resolves.toBe("request sucess");
+    expect(service.fetchDog).toHaveBeenCalledTimes(2);
+  });
+
+  test("testando requisição caso a promisse seja rejeitada", async () => {
+    service.fetchDog.mockRejectedValue("request failed");
+
+    expect(service.fetchDog).toHaveBeenCalledTimes(0);
+    await expect(service.fetchDog()).rejects.toMatch("request failed");
+    expect(service.fetchDog).toHaveBeenCalledTimes(1);
+  });
+});
+
 
 // Mocke a requisição e crie dois testes.
 // O primeiro deve interpretar que a requisição se resolveu e teve como valor "request sucess".

@@ -14,8 +14,16 @@ function concatStrings(string1, string2) {
   return string1 + string2;
 }
 
-module.exports = { randomNumber, toUpperCase, firstLetter, concatStrings };
+function fetchDog() {
+  return fetch("https://dog.ceo/api/breeds/image/random").then(response =>
+    response
+      .json()
+      .then(json =>
+        response.ok ? Promise.resolve(json) : Promise.reject(json)
+      )
+  );
+}
+module.exports = { randomNumber, toUpperCase, firstLetter, concatStrings, fetchDog };
 
 // Crie uma função que faça requisição para a api dog pictures .
 'https://dog.ceo/dog-api/' 
-
