@@ -6,6 +6,15 @@ const auth = require('./middleware/auth');
 
 const app = express();
 app.use(express.json());
+
+app.post('/signup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+  if (!email || !password || !firstName || !phone) {
+    return res.status(401).json({ message: 'missing fields'});
+  }
+  return res.status(200).json({ token: generateToken() })
+});
+
 app.use(auth);
 
 app.get('/ping', (_req, res) => {
@@ -71,14 +80,6 @@ app.post('/simpsons', async (req, res) => {
   } catch (err) {
     return res.status(409).json({ message: 'id already exists'})
   }
-});
-
-app.post('/signup', (req, res) => {
-  const { email, password, firstName, phone } = req.body;
-  if (!email || !password || !firstName || !phone) {
-    return res.status(401).json({ message: 'missing fields'});
-  }
-  return res.status(200).json({ token: generateToken() })
 });
 
 app.use(function (err, req, res, next) {
