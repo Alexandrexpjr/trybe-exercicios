@@ -1,0 +1,24 @@
+Os comportamentos da minha função:
+
+Se typeof N !== 'number'
+Levanta um erro. :check:
+
+Se N === 0
+Retorna um array vazio.
+
+A API é chamada 0 vezes.
+
+Se N > 0, retorna um array de objetos.
+
+Cada objeto deve ter as propriedades: url , width, height
+
+A imagem em url deve ter extensão .jpg
+
+width e height  são números
+
+a API é chamada N vezes
+
+Se a API falhar, retorna um array vazio
+
+BÔNUS: Fazendo todas as requisições de forma assincrona, checar se o Promise.all() é chamado e que ele retorna um array com os objetos que vem da requisição (Será que tem como criar um stub pro Promise.all ?)
+Será que alguém topa implementar isso pra mim seguindo TDD? :sorriso_olhos_sorrindo:
