@@ -1,6 +1,7 @@
 const express = require('express');
 const { errorMid } = require('./middlewares/user');
 const { create, listUsers, findUser, change } = require('./models/User');
+require('dotenv').config();
 
 const app = express();
 
@@ -41,7 +42,7 @@ app.put('/user/:id', errorMid, async(req, res) => {
 })
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Ouvindo a porta ${PORT}`);
 })
