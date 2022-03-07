@@ -40,6 +40,7 @@ router.get('/search/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { fullName, email } = req.body;
+    console.log(req.body)
     const newUser = await User.create({ fullName, email });
 
     return res.status(201).json(newUser);
