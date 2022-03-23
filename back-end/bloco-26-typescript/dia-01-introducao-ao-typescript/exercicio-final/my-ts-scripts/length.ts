@@ -5,20 +5,32 @@
 // unidade base - string
 // unidade para a conversão - string
 
+import readLine from "readline-sync";
+
 enum MedidasComprimento {
-  Quilometro = 'km',
-  Hectometro = 'hm',
-  Decametro = 'dam',
-  Metro = 'm',
-  Decimetro = 'dm',
-  Centimetro = 'cm',
-  Milimetro = 'mm',
+  'km' = 0,
+  'hm' = 1,
+  'dam' = 2,
+  'm' = 3,
+  'dm' = 4,
+  'cm' = 5,
+  'mm' = 6,
 }
+
 
 export function convert(valor: number, fromUnity: MedidasComprimento, toUnity: MedidasComprimento): string {
-  const medidas: string[] = Object.values(MedidasComprimento);
-  let exponent: number = medidas.indexOf(toUnity) - medidas.indexOf(fromUnity);
-  return `${valor* Math.pow(10, exponent)}${toUnity}`
+  let exponent: number = toUnity - fromUnity;
+  return `${valor* Math.pow(10, exponent)}${MedidasComprimento[toUnity]}`
 }
 
-console.log(convert(33, MedidasComprimento['Metro'], MedidasComprimento['Centimetro']));
+function exec() {
+  const measures:string[] = Object.keys(MedidasComprimento).filter(key => Number.isNaN(Number(key)));
+  const value: number = readLine.questionFloat("Digite o valor a ser convertido: \n");
+  const fromUnity = readLine.keyInSelect(measures, "Escolha um número para a unidade base");
+  const toUnity = readLine.keyInSelect(measures, "Escolha um número para a conversão");
+  const result = convert(value, fromUnity, toUnity);
+  console.log(`${value}${MedidasComprimento[fromUnity]} é igual a ${result}.`)
+}
+
+// console.log(readLine);
+exec();
