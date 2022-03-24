@@ -1,8 +1,8 @@
-import { Colors } from "./enums/Colors";
-import { Directions } from "./enums/Directions";
-import { Doors } from "./enums/Doors";
+import { Colors } from "../enums/Colors";
+import { Directions } from "../enums/Directions";
+import { Doors } from "../enums/Doors";
 
-class Car {
+export class Car {
   _brand: string;
   _color: Colors;
   _doors: number;
@@ -67,7 +67,7 @@ class Car {
       console.log(`You cannot speed down a turned off car!`);
       return
     };
-    if (speed > this._speed) {
+    if (speed >= this._speed) {
       this.stop();
       return
     }
@@ -85,12 +85,3 @@ class Car {
     console.log(`You have turned ${direction}`);
   }
 }
-
-const Celtinha = new Car('Chevrolet', Colors.SILVER, 4);
-
-Celtinha.speedUp(10);
-Celtinha.turnOn();
-Celtinha.speedUp(10);
-Celtinha.turn(Directions.LEFT);
-Celtinha.speedDown(12);
-Celtinha.turnOff();
