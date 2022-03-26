@@ -5,20 +5,32 @@
 // unidade base - string
 // unidade para a conversão - string
 
+import readLine from "readline-sync";
+
 enum MedidasVolume {
-  "Quilometro cúbico" = 'km³',
-  "Hectometro cúbico" = 'hm³',
-  "Decametro cúbico" = 'dam³',
-  "Metro cúbico" = 'm³',
-  "Decimetro cúbico" = 'dm³',
-  "Centimetro cúbico" = 'cm³',
-  "Milimetro cúbico" = 'mm³',
+  'km³' = 0,
+  'hm³' = 1,
+  'dam³' = 2,
+  'm³' = 3,
+  'dm³' = 4,
+  'cm³' = 5,
+  'mm³' = 6,
 }
+
 
 export function convert(valor: number, fromUnity: MedidasVolume, toUnity: MedidasVolume): string {
-  const medidas: string[] = Object.values(MedidasVolume);
-  let exponent: number = (medidas.indexOf(toUnity) - medidas.indexOf(fromUnity)) * 3;
-  return `${valor* Math.pow(10, exponent)}${toUnity}`
+  let exponent: number = (toUnity - fromUnity) * 3;
+  return `${valor* Math.pow(10, exponent)}${MedidasVolume[toUnity]}`
 }
 
-console.log(convert(33, MedidasVolume['Metro cúbico'], MedidasVolume['Centimetro cúbico']));
+function exec() {
+  const measures:string[] = Object.keys(MedidasVolume).filter(key => Number.isNaN(Number(key)));
+  const value: number = readLine.questionFloat("Digite o valor a ser convertido: \n");
+  const fromUnity = readLine.keyInSelect(measures, "Escolha um número para a unidade base");
+  const toUnity = readLine.keyInSelect(measures, "Escolha um número para a conversão");
+  const result = convert(value, fromUnity, toUnity);
+  console.log(`${value}${MedidasVolume[fromUnity]} é igual a ${result}.`)
+}
+
+// console.log(readLine);
+exec();

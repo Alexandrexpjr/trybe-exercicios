@@ -5,20 +5,32 @@
 // unidade base - string
 // unidade para a conversão - string
 
+import readLine from "readline-sync";
+
 enum MedidasArea {
-  "Quilometro quadrado" = 'km²',
-  "Hectometro quadrado" = 'hm²',
-  "Decametro quadrado" = 'dam²',
-  "Metro quadrado" = 'm²',
-  "Decimetro quadrado" = 'dm²',
-  "Centimetro quadrado" = 'cm²',
-  "Milimetro quadrado" = 'mm²',
+  'km²' = 0,
+  'hm²' = 1,
+  'dam²' = 2,
+  'm²' = 3,
+  'dm²' = 4,
+  'cm²' = 5,
+  'mm²' = 6,
 }
+
 
 export function convert(valor: number, fromUnity: MedidasArea, toUnity: MedidasArea): string {
-  const medidas: string[] = Object.values(MedidasArea);
-  let exponent: number = (medidas.indexOf(toUnity) - medidas.indexOf(fromUnity)) * 2;
-  return `${valor* Math.pow(10, exponent)}${toUnity}`
+  let exponent: number = (toUnity - fromUnity) * 2;
+  return `${valor* Math.pow(10, exponent)}${MedidasArea[toUnity]}`
 }
 
-console.log(convert(33, MedidasArea['Metro quadrado'], MedidasArea['Centimetro quadrado']));
+function exec() {
+  const measures:string[] = Object.keys(MedidasArea).filter(key => Number.isNaN(Number(key)));
+  const value: number = readLine.questionFloat("Digite o valor a ser convertido: \n");
+  const fromUnity = readLine.keyInSelect(measures, "Escolha um número para a unidade base");
+  const toUnity = readLine.keyInSelect(measures, "Escolha um número para a conversão");
+  const result = convert(value, fromUnity, toUnity);
+  console.log(`${value}${MedidasArea[fromUnity]} é igual a ${result}.`)
+}
+
+// console.log(readLine);
+exec();
