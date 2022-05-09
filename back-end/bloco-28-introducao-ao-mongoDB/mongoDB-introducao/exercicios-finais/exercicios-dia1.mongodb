@@ -1,0 +1,21 @@
+db.bios.find({ _id: 8});
+
+db.bios.find({ _id: 8 }, { name: true });
+
+db.bios.find({ _id: 8 }, { name: true, birth: true, _id: false });
+
+db.bios.find({ "name.first": "John"}).pretty();
+
+db.bios.find().limit(3).pretty();
+
+db.bios.find().skip(5).limit(2);
+
+use('books');
+
+db.books.count();
+
+db.books.find({ status: "PUBLISH"}).count();
+
+db.books.find({}, { title: true, isbn: true, pageCount: true, _id: false }).limit(3);
+
+db.books.find({ status: "MEAP" }, { title: true, authors: true, status: true }).skip(5).limit(10);
