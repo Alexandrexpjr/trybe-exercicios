@@ -13,25 +13,26 @@ exports.convert = void 0;
 const readline_sync_1 = __importDefault(require("readline-sync"));
 var MedidasComprimento;
 (function (MedidasComprimento) {
-    MedidasComprimento["Quilometro"] = "km";
-    MedidasComprimento["Hectometro"] = "hm";
-    MedidasComprimento["Decametro"] = "dam";
-    MedidasComprimento["Metro"] = "m";
-    MedidasComprimento["Decimetro"] = "dm";
-    MedidasComprimento["Centimetro"] = "cm";
-    MedidasComprimento["Milimetro"] = "mm";
+    MedidasComprimento[MedidasComprimento["km"] = 0] = "km";
+    MedidasComprimento[MedidasComprimento["hm"] = 1] = "hm";
+    MedidasComprimento[MedidasComprimento["dam"] = 2] = "dam";
+    MedidasComprimento[MedidasComprimento["m"] = 3] = "m";
+    MedidasComprimento[MedidasComprimento["dm"] = 4] = "dm";
+    MedidasComprimento[MedidasComprimento["cm"] = 5] = "cm";
+    MedidasComprimento[MedidasComprimento["mm"] = 6] = "mm";
 })(MedidasComprimento || (MedidasComprimento = {}));
 function convert(valor, fromUnity, toUnity) {
-    const medidas = Object.values(MedidasComprimento);
-    let exponent = medidas.indexOf(toUnity) - medidas.indexOf(fromUnity);
-    return `${valor * Math.pow(10, exponent)}${toUnity}`;
+    let exponent = toUnity - fromUnity;
+    return `${valor * Math.pow(10, exponent)}${MedidasComprimento[toUnity]}`;
 }
 exports.convert = convert;
 function exec() {
-    const value = readline_sync_1.default.questionFloat('Digite o valor a ser convertido: \n');
-    // const fromUnity = readLine.keyInSelect(Object.keys(MedidasComprimento), "Escolha um número para a unidade base");
-    // const toUnity = readLine.keyInSelect(Object.keys(MedidasComprimento), "Escolha um número para a conversão");
-    // return [value, fromUnity, toUnity]
-    // console.log(`${value}${fromUnity} é igual a ${convert(parseInt(value), fromUnity, toUnity)}`)
+    const measures = Object.keys(MedidasComprimento).filter(key => Number.isNaN(Number(key)));
+    const value = readline_sync_1.default.questionFloat("Digite o valor a ser convertido: \n");
+    const fromUnity = readline_sync_1.default.keyInSelect(measures, "Escolha um número para a unidade base");
+    const toUnity = readline_sync_1.default.keyInSelect(measures, "Escolha um número para a conversão");
+    const result = convert(value, fromUnity, toUnity);
+    console.log(`${value}${MedidasComprimento[fromUnity]} é igual a ${result}.`);
 }
+// console.log(readLine);
 exec();
