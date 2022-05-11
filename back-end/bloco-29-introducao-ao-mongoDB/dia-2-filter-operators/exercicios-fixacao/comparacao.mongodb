@@ -1,0 +1,11 @@
+use('business');
+// 1
+db.restaurants.find({ borough: { $in: ['Queens', 'Staten Island', 'Bronx'] } }).count();
+// 2
+db.restaurants.find({ cuisine: { $ne: 'American' }}).count();
+// 3
+db.restaurants.find({ rating: { $gte: 8 }}).count();
+// 4
+db.restaurants.find({ rating: { $lt: 4 }}).count();
+// 5
+db.restaurants.find({ rating: { $nin: [5, 6, 7] }}).count();

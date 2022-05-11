@@ -1,0 +1,32 @@
+use('business');
+// 1
+db.restaurants.find({rating: { $not: { $lt: 5 } }}).count();
+
+// 2
+db.restaurants.find({ $or: [
+  { rating: { $gte: 6 } },
+  { borough: 'Brooklyn'}
+  ]
+}).count();
+
+// 3
+db.restaurants.find({ $and: [
+  { borough: { $in: ['Queens', 'Staten Island', 'Brooklyn'] } },
+  { rating: { $gt: 4 } }
+]}).count();
+
+// 4
+db.restaurants.find({ $nor: [
+  { rating: 1 },
+  { cuisine: 'American' }
+]}).count();
+// 5
+db.restaurants.find({
+  $and: [
+    { rating: { $gt: 6, $lt: 10 } },
+    { $or: [
+      { borough: 'Brooklyn' },
+      { cuisine: { $ne: 'Delicatessen' }}
+    ]}
+  ]
+}).count();

@@ -1,0 +1,5 @@
+use('business');
+// 1
+db.restaurants.find().sort({ name: 1 });
+// 2
+db.restaurants.find().sort({ rating: -1 });
