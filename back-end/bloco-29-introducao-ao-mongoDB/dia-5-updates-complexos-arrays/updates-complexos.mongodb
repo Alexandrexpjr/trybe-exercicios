@@ -1,0 +1,18 @@
+use("cinema");
+
+db.movies.updateMany({
+  title: "Batman"
+}, {
+  $push: {
+    "cast.$[x].actor": {
+      $each: [],
+      $sort: 1
+    }
+  }
+}, {
+  arrayFilters: [
+    { "x.character": "Batman" }
+  ]
+})
+
+db.movies.find();
