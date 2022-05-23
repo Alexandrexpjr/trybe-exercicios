@@ -8,4 +8,14 @@ export default class CupService {
     const cups = await this.cupModel.getCups();
     return cups;
   }
+
+  public async getCupByYear(year: number): Promise<ICup|null> {
+    const cup = await this.cupModel.getCupByYear(year);
+    return cup;
+  }
+
+  public async create(data: ICup): Promise<ICup|null> {
+    const cup = await this.cupModel.create(data);
+    return cup;
+  }
 }
